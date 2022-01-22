@@ -1,0 +1,19 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url(https://drive.google.com/file/d/1obIKU-Cn-guiw5YSEOvAtg6uqEYtOU2P/view?usp=sharing);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  width: 100vw;
+  height: 15vh;
+  margin: -10px 0 0 -10px;
+  background-color: darkblue;
+
+  color: crimson;
+  font-weight: bold;
+  line-height: 15vh;
+}

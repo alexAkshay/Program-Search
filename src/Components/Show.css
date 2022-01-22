@@ -1,0 +1,42 @@
+.single__result {
+    width: 200px;
+    height: 250px;
+    border: solid blueviolet;
+    border-radius: 5px;
+    text-align: center;
+    color: blue;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    background-color: skyblue;
+  }
+  
+  .image {
+    width: 200px;
+    height: 150px;
+  }
+  .single__result:hover {
+    transform: scale(1.5, 1.5);
+  }
+  .input {
+    width: 65vw;
+    height: 5vh;
+    font-size: 1.5rem;
+  }
+  
+  .results {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    background: #960e0e;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  /* .single__result:first-child {
+    width: 80vw;
+    height: 20vh;
+    justify-self: center;
+    align-items: center;
+  } */
+  

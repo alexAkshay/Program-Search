@@ -1,19 +1,43 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-image: url(https://drive.google.com/file/d/1obIKU-Cn-guiw5YSEOvAtg6uqEYtOU2P/view?usp=sharing);
+  
 }
 
 .nav {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.5rem;
-  width: 100vw;
-  height: 15vh;
-  margin: -10px 0 0 -10px;
-  background-color: darkblue;
+  position: relative;
+ display: flex;
+ height: 7vh;
+line-height: 5vh;
+ background:  radial-gradient(rgb(0, 0, 0) 15%, rgb(50, 50, 29) 70%, rgb(0, 0, 0) 15%)
+}
 
-  color: crimson;
+button{
+  position: relative;
+  width: auto;
+  height: 5vh;
+
+  background-color: rgb(197, 36, 127);
+  color: beige;
   font-weight: bold;
-  line-height: 15vh;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+}
+.menu{
+margin-left: 5vw;
+margin-right: 2vw;
+}
+input{
+  width: 60vw;
+  height: 5vh;
+  background-color:rgb(63, 73, 43) ;
+}
+.toggletheme{
+  margin-left: 5vw;
+  margin-right: 2vw;
+}
+.method{
+  height: 5vh;
+ text-align: center;
 }

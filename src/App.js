@@ -1,44 +1,37 @@
 import "./App.css";
 import React, { useState } from "react";
-import Show from "./Components/Show";
-import Person from "./Components/Person";
-
-
+import Main from "./Main";
+import ThemesContext, {themes} from './Themes';
 
 export default function App() {
-  const [method, setMethod] = useState("Show");
+  const [theme, setTheme] = useState(themes.dark)
+  const [method, setmethod] = useState("shows")
+  const [searchTerm, setSearchTerm] = useState('')
+  
+const changeTheme = () =>{
+  theme === themes.dark ?  setTheme(themes.light) :
+  setTheme(themes.dark)
+}
 
-  const handlepersonclick = () => {
-    return setMethod("Person");
-  };
-  const handleShowClick = () => {
-    return setMethod("Show");
-  };
-  return (
-    <div className="App">
-      <div className="nav">
-        <div className="logo">Program Finder by Group 3</div>
-        <div className="toggelButtons">
-          Search by Show
-          <input
-            type="radio"
-            name="type"
-            value="byShow"
-            onClick={handleShowClick}
-          />
-          Search by Person
-          <input
-            type="radio"
-            name="type"
-            value="byPerson"
-            onClick={handlepersonclick}
-          />
-        </div>
-      </div>
-      <div>
-        {method === "Person" && <Person />}
-        {method === "Show" && <Show />}
-      </div>
-    </div>
-  );
+const handleInputChange = (e) =>{
+  setSearchTerm(e.target.value)
+}
+const toggleMethod=() =>{
+  method === "shows" ? setmethod("people") : setmethod("shows")
+}
+
+
+ return(
+  <ThemesContext.Provider value={theme}>
+    <div className="nav"> 
+    
+    <button className="menu">MENU</button>
+    <input type="text" placeholder="Search" onChange={handleInputChange} />
+    <button onClick={changeTheme} className="toggletheme" >Change Theme</button>
+   <button className="togglemethod" onClick={toggleMethod}> Change Method </button>
+   </div>
+
+  <Main method={method} searchTerm={searchTerm} />
+</ThemesContext.Provider>
+ )
 }

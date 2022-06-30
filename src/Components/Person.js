@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import axiox from "axios";
 import "./Show.css";
 
-const List = () => {
+const Person = ({searchTerm}) => {
   const [person, setPerson] = useState([]);
-  const [searchterm, setSearchterm] = useState("Alan Walker");
-  const handleSearchClick = (e) => {
-    e.preventDefault();
-    console.log(searchterm);
-  };
 
   useEffect(() => {
     axiox
-      .get(`https://api.tvmaze.com/search/people?q=${searchterm}`)
+      .get()
       .then((res) => {
         console.log(res);
         setPerson(res.data);
@@ -20,22 +15,10 @@ const List = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [searchterm]);
+  }, [searchTerm]);
 
   return (
     <>
-      <form className="searchbar__form">
-        <input
-          type="text"
-          placeholder="Please Enter Something to search"
-          value={searchterm}
-          onChange={(e) => setSearchterm(e.target.value)}
-          className="input"
-        />
-        <button className="search__submit" onClick={handleSearchClick}>
-          Search
-        </button>
-      </form>
       <div className="results">
         {person.map((person) => (
           <div className="single__result">
@@ -55,4 +38,4 @@ const List = () => {
     </>
   );
 };
-export default List;
+export default Person;

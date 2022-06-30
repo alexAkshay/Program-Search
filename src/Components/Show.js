@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axiox from "axios";
 import "./Show.css";
 
-const Show = () => {
+const Show = ({searchTerm}) => {
   const [show, setShow] = useState([]);
-  const [searchterm, setSearchterm] = useState("friends");
+
 
   useEffect(() => {
     axiox
-      .get(`https://api.tvmaze.com/search/shows?q=${searchterm}`)
+      .get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
       .then((res) => {
         console.log(res);
         setShow(res.data);
@@ -16,19 +16,11 @@ const Show = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [searchterm]);
+  }, [searchTerm]);
 
   return (
     <>
-      <form className="searchbar__form">
-        <input
-          type="text"
-          placeholder="Please Enter Something to search"
-          value={searchterm}
-          onChange={(e) => setSearchterm(e.target.value)}
-          className="input"
-        />
-      </form>
+  
       <div className="results">
         {show.map((show) => (
           <div className="single__result">

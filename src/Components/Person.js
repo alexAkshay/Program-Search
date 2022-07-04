@@ -7,7 +7,7 @@ const Person = ({searchTerm}) => {
 
   useEffect(() => {
     axiox
-      .get()
+      .get(`https://api.tvmaze.com/search/people?q=${searchTerm}`)
       .then((res) => {
         console.log(res);
         setPerson(res.data);

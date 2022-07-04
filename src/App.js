@@ -2,11 +2,13 @@ import "./App.css";
 import React, { useState } from "react";
 import Main from "./Main";
 import ThemesContext, {themes} from './Themes';
+import Footer from "./Components/Footer";
+import {AiOutlineMenu} from 'react-icons'
 
 export default function App() {
   const [theme, setTheme] = useState(themes.dark)
   const [method, setmethod] = useState("shows")
-  const [searchTerm, setSearchTerm] = useState('av')
+  const [searchTerm, setSearchTerm] = useState('')
   
 const changeTheme = () =>{
   theme === themes.dark ?  setTheme(themes.light) :
@@ -16,12 +18,8 @@ const changeTheme = () =>{
 const handleInputChange = (e) =>{
   setSearchTerm(e.target.value)
 }
-const toggleMethod=(e) =>{
-  e.preventDefault();
-  if(method === "shows"){
-    setMethod("person");}
-  else{
-    setMethod("shows")}
+const toggleMethod=() =>{
+  method === "shows" ? setmethod("people") : setmethod("shows")
 }
 
 
@@ -29,13 +27,15 @@ const toggleMethod=(e) =>{
   <ThemesContext.Provider value={theme}>
     <div className="nav"> 
     
-    <button className="menu">MENU</button>
+    <button className="menu"><AiOutlineMenu/> MENU</button>
     <input type="text" placeholder="Search" onChange={handleInputChange} />
     <button onClick={changeTheme} className="toggletheme" >Change Theme</button>
    <button className="togglemethod" onClick={toggleMethod}> Change Method </button>
+   <button className="login">LOGIN</button>
    </div>
 
   <Main method={method} searchTerm={searchTerm} />
+  <Footer/>
 </ThemesContext.Provider>
  )
 }

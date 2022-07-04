@@ -5,7 +5,7 @@ import ThemesContext, {themes} from './Themes';
 
 export default function App() {
   const [theme, setTheme] = useState(themes.dark)
-  const [method, setmethod] = useState("")
+  const [method, setmethod] = useState("shows")
   const [searchTerm, setSearchTerm] = useState('av')
   
 const changeTheme = () =>{
@@ -17,7 +17,10 @@ const handleInputChange = (e) =>{
   setSearchTerm(e.target.value)
 }
 const toggleMethod=() =>{
-  method === "shows" ? setmethod("people") : setmethod("shows")
+  if(method=== "shows"){
+    setMethod("person");}
+  else{
+    setMethod("shows")}
 }
 
 

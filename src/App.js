@@ -16,8 +16,9 @@ const changeTheme = () =>{
 const handleInputChange = (e) =>{
   setSearchTerm(e.target.value)
 }
-const toggleMethod=() =>{
-  if(method=== "shows"){
+const toggleMethod=(e) =>{
+  e.preventDefault();
+  if(method === "shows"){
     setMethod("person");}
   else{
     setMethod("shows")}

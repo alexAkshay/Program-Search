@@ -6,7 +6,7 @@ import ThemesContext, {themes} from './Themes';
 export default function App() {
   const [theme, setTheme] = useState(themes.dark)
   const [method, setmethod] = useState("shows")
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('av')
   
 const changeTheme = () =>{
   theme === themes.dark ?  setTheme(themes.light) :

@@ -2,7 +2,7 @@ import React, { useContext} from 'react'
 import Show from './Components/Show';
 import Person from './Components/Person'
 import ThemesContext from './Themes'
-// import './App.css'
+import './App.css'
 
 export default function Main(props) {
   const {
@@ -17,6 +17,7 @@ export default function Main(props) {
 {
   method === "shows" ? <Show searchTerm={searchTerm}/> : <Person searchTerm={searchTerm}/>
 }
+
 
 </div>
     

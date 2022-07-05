@@ -2,8 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import Main from "./Main";
 import ThemesContext, {themes} from './Themes';
-import Footer from "./Components/Footer";
-import {AiOutlineMenu} from 'react-icons'
+
+
 
 export default function App() {
   const [theme, setTheme] = useState(themes.dark)
@@ -27,7 +27,7 @@ const toggleMethod=() =>{
   <ThemesContext.Provider value={theme}>
     <div className="nav"> 
     
-    <button className="menu"><AiOutlineMenu/> MENU</button>
+    <button className="menu"> MENU</button>
     <input type="text" placeholder="Search" onChange={handleInputChange} />
     <button onClick={changeTheme} className="toggletheme" >Change Theme</button>
    <button className="togglemethod" onClick={toggleMethod}> Change Method </button>
@@ -35,7 +35,7 @@ const toggleMethod=() =>{
    </div>
 
   <Main method={method} searchTerm={searchTerm} />
-  <Footer/>
+ 
 </ThemesContext.Provider>
  )
 }
